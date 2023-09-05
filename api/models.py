@@ -19,7 +19,7 @@ class Teacher(models.Model):
     address = models.CharField(max_length=50)
     phone = models.CharField(max_length=50)
     email = models.EmailField()
-    picture = models.ImageField(null=True)
+    picture_teacher = models.ImageField(null=True)
     details = models.TextField()
 
     def __str__(self):
@@ -34,7 +34,7 @@ class Course(models.Model):
     name = models.CharField(max_length=50, db_index=True)
     max_students = models.PositiveIntegerField(default=20)
     number_of_students = models.PositiveIntegerField(default = 0)
-    picture = models.URLField(default ="null" )
+    picture_course= models.URLField(default ="null" )
     price = models.DecimalField(
         max_digits=10, decimal_places=2,  null=True, blank=True, db_index=True)
     session_num = models.IntegerField(null=True, blank=True)
