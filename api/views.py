@@ -19,12 +19,13 @@ from rest_framework.permissions import AllowAny, IsAuthenticated
 from rest_framework.authentication import TokenAuthentication
 from rest_framework_simplejwt.tokens import RefreshToken
 from rest_framework.authentication import TokenAuthentication
-from django.http import FileResponse, JsonResponse
+from django.http import FileResponse, HttpResponse, JsonResponse
 from django.shortcuts import get_object_or_404, get_list_or_404
 
 # Create your views here.
 
-
+def home(request):
+    return HttpResponse("<h1 style ='text-align:center'>Welcom</h1>")
 class ContactListAPIView(generics.ListCreateAPIView):
     serializer_class = ContactSerializer
     queryset = Contact.objects.all()

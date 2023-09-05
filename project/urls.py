@@ -22,11 +22,12 @@ from django.conf.urls.static import static
 #     TokenRefreshView,
 # )
 from rest_framework.authtoken.views import obtain_auth_token
-
+from api import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include('api.urls')),
+    path('', views.home, name = 'home'),
     path('auth/', include('djoser.urls')),
     path('auth/', include('djoser.urls.jwt')),
 
